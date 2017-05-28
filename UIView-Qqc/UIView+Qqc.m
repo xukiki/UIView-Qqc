@@ -276,7 +276,8 @@
  */
 + (instancetype)viewOfClassNamedNibWithBundleName:(NSString*)strBundleName
 {
-    NSArray *viewArray = [[NSBundle bundleWithName:strBundleName] loadNibNamed:NSStringFromClass([self class])
+    NSBundle* bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:strBundleName ofType:@"bundle"]];
+    NSArray *viewArray = [bundle loadNibNamed:NSStringFromClass([self class])
                                                                          owner:self
                                                                        options:nil];
     

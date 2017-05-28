@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
 
   s.name         = "UIView-Qqc"
-  s.version      = "1.0.20"
+  s.version      = "1.0.22"
   s.summary      = "UIView-Qqc"
   s.homepage     = "https://github.com/xukiki/UIView-Qqc"
   s.source       = { :git => "https://github.com/xukiki/UIView-Qqc.git", :tag => "#{s.version}" }
