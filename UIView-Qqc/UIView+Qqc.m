@@ -250,4 +250,42 @@
     return nil;
 }
 
+/**
+ *  载入同类名的nib文件并返回该view的实例
+ *
+ *  @return 指定view的实例
+ */
++ (instancetype)viewOfClassNamedNib
+{
+    NSArray *viewArray = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                                       owner:self
+                                                     options:nil];
+    
+    if (viewArray.count > 0 && [viewArray[0] isKindOfClass:[self class]])
+    {
+        return viewArray[0];
+    }
+    
+    return nil;
+}
+
+/**
+ *  载入同类名的nib文件并返回该view的实例
+ *
+ *  @return 指定view的实例
+ */
++ (instancetype)viewOfClassNamedNibWithBundleName:(NSString*)strBundleName
+{
+    NSArray *viewArray = [[NSBundle bundleWithName:strBundleName] loadNibNamed:NSStringFromClass([self class])
+                                                                         owner:self
+                                                                       options:nil];
+    
+    if (viewArray.count > 0 && [viewArray[0] isKindOfClass:[self class]])
+    {
+        return viewArray[0];
+    }
+    
+    return nil;
+}
+
 @end

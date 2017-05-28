@@ -73,4 +73,19 @@
  */
 + (instancetype)viewWithClassNamedNib;
 
+/**
+ *  载入同类名的nib文件并返回该view的实例
+ *
+ *  @return 指定view的实例
+ */
++ (instancetype)viewOfClassNamedNib;
+
+/**
+ *  载入同类名的nib文件并返回该view的实例
+ *
+ *  @return 指定view的实例
+ */
++ (instancetype)viewOfClassNamedNibWithBundleName:(NSString*)strBundleName;
+
+
 @end
